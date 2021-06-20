@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> A-Listed </title>
+  <meta charset="utf-8">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="./icons/152.png">
+  <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+  <meta name="theme-color" content="white"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="red">
+  <meta name="apple-mobile-web-app-title" content="A-List">
+  <meta name="msapplication-TileImage" content="./icons/144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+
+  <!-- MDC css and icons and custom font -->
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+
+  <!-- Custom CSS and manifest-->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Top Bar TODO center the title -->
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed" data-mdc-auto-init="MDCTopAppBar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">A Listed</span>
+      </section>
+    </div>
+  </header>
+
+  <div class="content">
+  <!-- Sample Card Section. It should ultimate look something like this but dynamically built TODO-->  
+  <div class="mdc-layout-grid" id="cardsGrid">
+  </div> <!-- end of grid of cards -->
+
+</div> <!-- end of Content -->
+
+
+
+  <!-- FAB for going to the Search screen -->
+  <button class="mdc-fab fixed" id="fabAdd" aria-label="add" data-mdc-auto-init="MDCRipple">
+    <span class="mdc-fab__icon material-icons">add</span>
+  </button>
+
+  <!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <!-- Search Screen -->
+	  <div class="modal-content" id="searchScreen">
+	    <span class="close">&times;</span>
+	    <div class="mdc-text-field mdc-text-field--with-trailing-icon" data-mdc-auto-init="MDCTextField">
+			  <input type="text" onkeydown="search(this)" class="mdc-text-field__input"> <!-- TODO Maybe make this not use onkeydown -->
+			  <label class="mdc-floating-label" data-mdc-auto-init="MDCFloatingLabel" for="my-text-field">Search for a movie</label>
+			  <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">search</i> <!-- Tab index so the button is clickable -->
+			  <div class="mdc-line-ripple" data-mdc-auto-init="MDCLineRipple"></div>
+			</div>
+	  </div>
+
+	  <!-- Results Screen -->
+	  <div class="modal-content" id="resultsScreen">
+	    <span class="close">&times;</span>
+
+        <div id="resultsGrid" class="mdc-layout-grid">
+
+        </div> 
+
+	  </div>
+
+	</div>
+	<!-- End of Modal -->
+
+  
+
+	<script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+	</script>
+
+  <!-- jQuery, MDC js, and Dexie -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/search.js"></script>
+</body>
+  
+</html>

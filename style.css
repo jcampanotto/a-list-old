@@ -1,0 +1,102 @@
+:root { /* Chances MDC colors */ 
+  --mdc-theme-primary: #CE2540; /* This is AMC's color for the their logo */
+  --mdc-theme-secondary: #CE2540; /* This is AMC's color for the their logo */
+}
+
+html {
+	height: 100%; /* Needed for body to cover the whole page b/c html is the parent */
+}
+
+body {
+	margin: 0px; /* This makes the top app bar go all the way across. MIGHT cause issues though. */ 
+	position: relative; /* Needed for FAB to be bottom right */
+	height: 100%;
+}
+
+.mdc-top-app-bar * {
+	background-color: #CE2540; /* This is AMC's color for the their logo */
+	font-family: 'Bungee Inline', cursive; /* Custom font. If removing be sure to remove linked in index */
+	font-size: 24px;
+}
+
+.content {
+	padding-top: 10px;
+}
+
+.mdc-fab {
+	background-color: #CE2540; /* This is AMC's color for the their logo */
+}
+
+.mdc-card { /* These are mostly layout formattings. Will likely be tweaked, esp. height */
+	margin-top: 10%;
+	height: 200px;
+}
+
+.mdc-fab {
+	position: sticky; /* Needed for FAB to be bottom right */
+	float: right; /* Same as above */
+	bottom: 5%;
+	right: 5%;
+}
+
+.mdc-text-field--with-trailing-icon {
+	position: fixed; /* For centering in the middle */
+	top: 50%; /* For centering in the middle */
+	left: 50%; /* For centering in the middle */
+	transform: translate(-50%, -50%); /* For centering in the middle */
+	width: 50%;
+}
+
+.mdc-button {
+    /* TODO Fix the Color color and background-color don't work*/
+    width: 15px;
+    font-family: 'Bungee Inline', cursive; /* Custom font. If removing be sure to remove linked in index */
+}
+
+:root {
+  --mdc-theme-primary: #CE2540; /* This is AMC's color for the their logo */
+  --mdc-theme-secondary: #CE2540; /* This is AMC's color for the their logo */
+}
+
+/* Begin CSS for the Modal boxes */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+}
+
+/* The Close Button TODO use Material*/
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* End Modal */
